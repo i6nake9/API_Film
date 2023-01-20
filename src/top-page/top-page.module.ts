@@ -1,4 +1,12 @@
 import { Module } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { TopPageController } from './top-page.controller';
 
-@Module({})
-export class TopPageModule {}
+@Module({
+  controllers: [TopPageController],
+})
+export class TopPageModule {
+  constructor(private readonly config: ConfigService) {
+    this.config.get('Test');
+  }
+}
