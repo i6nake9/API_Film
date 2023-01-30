@@ -47,7 +47,7 @@ export class TopPageModel extends TimeStamps {
   @prop()
   category: string;
 
-  @prop()
+  @prop({ type: () => HhData })
   hh?: HhData;
 
   @prop({ type: () => [TopPageAdvantage] })
